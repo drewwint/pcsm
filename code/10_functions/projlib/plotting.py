@@ -164,6 +164,8 @@ def plot_timeseries_with_trials(
     figsize=(20, 4),
     xlabel="Time (bins)",
     ylabel="Value",
+    hlines=None,
+    hline_kwargs=None,
     title=None,
     save_loc=None,
     dpi=400,
@@ -342,6 +344,12 @@ def plot_timeseries_with_trials(
         if labels:
             (legend_kwargs := legend_kwargs or {})
             axes[0].legend(handles, labels, loc=legend_loc, frameon=True, **legend_kwargs)
+    if hlines is not None:
+        if not isinstance(hlines, (list,tuple,np.ndarray)):
+            hlines = [hlines]
+        for ax in axes:
+            for y in hlines:
+                ax.axhline(y, **(hline_kwargs or dict(color='k' , linestyle='--', linewidth=1)))
     fig.tight_layout()
     if save_loc:
         fig.savefig(save_loc, dpi=dpi, bbox_inches="tight")
@@ -586,101 +594,6 @@ def plot_bnode_heatmap(
     if show:
         plt.show()
     return fig, ax, cb, orig_idx
-
-
-# Brain Plot of Simulated timeseries
-## Note this is for simulation data only
-# def plot_node_process_state_trans_simulation(
-#   node_idx, 
-#   bold, 
-#   nodes = 200, 
-#   networks = 7,
-#   res = 2,
-#   bold_boost= 2,
-#   plt_type = "stat",              # "stat" | "glass"
-#   atlas_loc = "/home/dwinters/ascend-lab/resources/atlases",
-#   plt_save_dir = None,
-#   plt_subj_lab = None,
-#   plt_show = True
-#   ):
-#   """
-#   This function reshapes the simulated timeseries for plotting. Specifically,
-#   this function uses the schaefer atlas with 7 yeo networks for shaping. Then,
-#   glass brain function from nilearn is used for plotting.
-#   """
-#   import numpy as np
-#   import os
-#   import nilearn
-#   import nilearn.plotting
-#   import nilearn.datasets
-#   import nilearn.image
-#   import nilearn.maskers
-#   import matplotlib.pyplot as plt
-#   sch_atl = nilearn.datasets.fetch_atlas_schaefer_2018(
-#     n_rois = nodes, 
-#     yeo_networks= networks, 
-#     resolution_mm= res, 
-#     data_dir= atlas_loc
-#     )
-#   atlas = nilearn.image.load_img(sch_atl.maps)
-#   atlas_data = atlas.get_fdata()
-#   atlas_vals = np.zeros_like(atlas_data)
-#   bld0 = bold.reshape(-1,nodes)
-#   if bold_boost > 1:
-#     bld0_vals = np.array([np.mean(ts)*bold_boost for ts in bld0])
-#   else:
-#     bld0_vals = np.array([np.mean(ts) for ts in bld0])
-#   for ii in range(1, nodes + 1):
-#     atlas_vals[atlas_data == ii] = bld0_vals[ii-1]
-#   stat_data = nilearn.image.new_img_like(atlas, atlas_vals)
-#   msker = nilearn.maskers.NiftiLabelsMasker(atlas)
-#   msk_vals_all = msker.fit_transform(stat_data)
-#   ind = 0
-#   proc_st = ["State Processing Nodes: ", "Transition Processing Nodes: "]
-#   proc_st_fn = ["state_processing_nodes_", "transition_processing_nodes_"]
-#   proc_lab_l = [['Serial', 'Mixed', 'Parallel'],['Serial', 'Mixed', 'Parallel', 'General']]
-#   proc_lab_fn_l = [['serial', 'mixed', 'parallel'],['serial', 'mixed', 'parallel','general']]
-#   for iii in node_idx.keys():
-#     proc_lab = proc_lab_l[ind]
-#     proc_lab_fn = proc_lab_fn_l[ind]
-#     ind2 = 0
-#     for jj in node_idx[iii]:
-#       msk_vals = np.zeros_like(msk_vals_all)
-#       msk_vals[node_idx[iii][jj]] = msk_vals_all[node_idx[iii][jj]]
-#       msk_vals_img = msker.inverse_transform(msk_vals)
-#       if plt_type == "glass":
-#         nilearn.plotting.plot_glass_brain(
-#           msk_vals_img, plot_abs = False,
-#           colorbar = True,
-#           title= str(proc_st[ind] + proc_lab[ind2]))
-#       elif plt_type == "stat":
-#         nilearn.plotting.plot_stat_map(
-#           msk_vals_img,
-#           colorbar = True, 
-#           title= str(proc_st[ind] + proc_lab[ind2]),
-#           draw_cross=False
-#           )
-#       if plt_save_dir is not None:
-#         if plt_subj_lab is not None:
-#             plt.savefig(
-#                 os.path.join(
-#                     plt_save_dir, 
-#                     "brain-plot-" + plt_type + "_" + plt_subj_lab + "_" + proc_lab_fn[ind2] + "_" + proc_st_fn[ind] + ".tiff"), 
-#                     dpi=400
-#                 )
-#         else:
-#             plt.savefig(
-#                 os.path.join(
-#                     plt_save_dir, 
-#                     "brain-plot-" + plt_type + "_" + proc_lab_fn[ind2] + "_" + proc_st_fn[ind] + ".tiff"), 
-#                     dpi=400
-#                 )
-#       if plt_show == True:
-#         plt.show(), plt.close()
-#       elif plt_show == False:
-#         plt.close()
-#       ind2 += 1
-#     ind += 1
 
 
 # Brain Plot of Simulated timeseries

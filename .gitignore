@@ -2,4 +2,5 @@ data/
 simulated_data/
 derivatives/
 simulated_participants/
-code/env/
+code/env/venv_pcsm
+code/env/venv_pcsm.tar.gz

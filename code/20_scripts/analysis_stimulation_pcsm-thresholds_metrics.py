@@ -303,7 +303,7 @@ dmaha_threshold.to_csv(os.path.join(base_out,"dmaha_threshold.tsv"),sep="\t",ind
 dmaha_details.to_csv(os.path.join(base_out,"dmaha_threshold_details.tsv"),sep="\t",index=True)
 
 ## plotting distribution and threshold
-sns.kdeplot(dmaha_all, fill=True)
+sns.kdeplot(dmaha_all, fill=True,bw_adjust=2)
 plt.axvline(tau_dmaha, linestyle = "--", color="red", label=(r"$\tau$" f" ~ {round(tau_dmaha,5)}"), linewidth = 2.5)
 plt.grid(axis='y', linewidth = 1, alpha = 0.3)
 plt.legend(title = r"$D^{maha}$ Threshold", loc="upper center")

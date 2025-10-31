@@ -1,0 +1,33 @@
+certifi==2025.8.3
+charset-normalizer==3.4.3
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.60.0
+hmmlearn==0.3.3
+idna==3.10
+joblib==1.5.2
+kiwisolver==1.4.9
+lxml==6.0.2
+matplotlib==3.10.6
+nibabel==5.3.2
+nilearn==0.12.1
+numpy==2.3.3
+packaging==25.0
+pandas==2.3.2
+patsy==1.0.1
+pillow==11.3.0
+# Editable install with no version control (projlib==0.1.0)
+-e /home/dwinters/ascend-lab/publications/pcsm/code/10_functions
+pyparsing==3.2.5
+python-dateutil==2.9.0.post0
+pytz==2025.2
+requests==2.32.5
+scikit-learn==1.7.2
+scipy==1.16.2
+seaborn==0.13.2
+six==1.17.0
+statsmodels==0.14.5
+threadpoolctl==3.6.0
+typing_extensions==4.15.0
+tzdata==2025.2
+urllib3==2.5.0
