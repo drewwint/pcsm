@@ -1,6 +1,8 @@
 # Probabalistic Cognitive State Modeling (PCSM) repository
 
-![Image of PCSM Pipeline](https://github.com/drewwint/pcsm/PCSM_figure.tif)
+![Image of PCSM Pipeline](https://github.com/drewwint/pcsm/PCSM_figure.png)
+
+
 
 This repository holds the code with links to the  simulated data and simulated derivatives for evaluating PCSM.
 
