@@ -1,6 +1,6 @@
 # Probabalistic Cognitive State Modeling (PCSM) repository
 
-![Image of PCSM Pipeline](https://github.com/drewwint/pcsm/PCSM_figure.png)
+![Image of PCSM Pipeline](https://github.com/drewwint/pcsm/blob/main/PCSM_figure.png)
 
 
 
