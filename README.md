@@ -56,6 +56,6 @@ Then you can import modules and functions to run PCSM for yourself. Until PCSM p
 ## PCSM links
 - [Preregistration](https://doi.org/10.17605/OSF.IO/DFJSB)
 - [Preprint](www.drewEwinters.com)
-- [OSF](https://doi.org/10.17605/OSF.IO/BP3GN)
+- [OSF](https://osf.io/bp3gn)
 - [github](https://github.com/drewwint/pcsm)
  
