@@ -1,10 +1,14 @@
 # Probabalistic Cognitive State Modeling (PCSM) repository
 
+This repository holds the code with links to the simulated data and derivatives for evaluating PCSM.
+
+## PCSM Pipeline Image
 ![Image of PCSM Pipeline](https://github.com/drewwint/pcsm/blob/main/PCSM_figure.png)
+*Depicting the PCSM pipeline. (A) Modeling BOLD from task-based fMRI using a Finite Impulse Response (FIR) model. (B) FIR-derived timeseries are inputs into the GMM-HMM with PCSM alignment. The emergent properties from these dynamic outputs are then decoded in the following steps. (C) The number of responding nodes at each timepoint is decoded to estimate parallel and serial processing periods that are then projected to brain space. (D) Cognitive demand and resource levels are computed from these dynamics. (E) From these metrics PCSM derives a scalar index of serial bottleneck severity.*
 
+This image outlines the workflow for computations in PCSM - These steps are outlined in more detail in the upcomming peer-reviewed publication.
 
-
-This repository holds the code with links to the  simulated data and simulated derivatives for evaluating PCSM.
+Examples of using pcsm can be found in this repository under `code/30_notebooks/PCSM_example_use.ipynb`
 
 ## Data links
 [The Open Science Framework (OSF) repository for PCSM](https://osf.io/bp3gn) holding the simulations can be found [here](https://osf.io/bp3gn/files). 
@@ -27,7 +31,7 @@ tar -xzf simulated_data.tar.gz
 ```
 
 ## PCSM Functions
-Functions the scripts folder uses are in the code/10_functions/joblib folder. This can be downloaoded as a package and imported into your coding framework for immediate use. 
+Functions the scripts folder uses are in the 'code/10_functions/projlib' folder. This can be downloaoded as a package and imported into your coding framework for immediate use. 
 
 ### Note on upcomming package
 While under review I anticipate some changes to be made - upon acceptance I will place these functions in a user friendly format and upload to PyPI for easy import via pip.
