@@ -8,7 +8,7 @@ This repository holds the code with links to the simulated data and derivatives 
 
 This image outlines the workflow for computations in PCSM - These steps are outlined in more detail in the upcomming peer-reviewed publication.
 
-Examples of using PCSM with human data can be found in this repository under `code/30_notebooks/PCSM_example_human_data.ipynb`
+Examples of using PCSM with human data can be found in this repository under `code/30_notebooks/PCSM_example_human_data_reduced.ipynb`
 
 ## Data links
 [The Open Science Framework (OSF) repository for PCSM](https://osf.io/bp3gn) holding the simulations can be found [here](https://osf.io/bp3gn/files). 
