@@ -59,7 +59,8 @@ Then you can import modules and functions to run PCSM for yourself. Until PCSM p
 
 ## PCSM links
 - [Preregistration](https://doi.org/10.17605/OSF.IO/DFJSB)
-- [Preprint](www.drewEwinters.com)
-- [OSF](https://osf.io/bp3gn)
-- [github](https://github.com/drewwint/pcsm)
+- [Preprint](https://doi.org/10.1101/2025.10.31.685855)
+- [Presentation](https://www.drewewinters.com/talk/probabilistic-cognitive-state-modeling-pcsm-a-framework-for-quantifying-information-processing-in-fmri/)
+- [OSF/Data](https://osf.io/bp3gn)
+- [GitHub/Code](https://github.com/drewwint/pcsm)
  
